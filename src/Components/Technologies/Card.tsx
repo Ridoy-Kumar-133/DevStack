@@ -2,7 +2,7 @@ import type { ICard } from "../Types/Types";
 
 const Card = ({ tek }: { tek: ICard }) => {
     return (
-        <div className="w-75 h-71.25 rounded-xl border p-4">
+        <div className="w-75 h-71.25 rounded-xl p-4 shadow-sm">
 
             <div className="flex justify-between items-center">
                 <img

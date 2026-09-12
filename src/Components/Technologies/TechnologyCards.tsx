@@ -9,7 +9,7 @@ const TechnologyCards = ({cards} : { cards : ICard[] }) => {
 
     return (
         <div className="flex my-5">
-           <div className="grid grid-cols-3 gap-1">
+           <div className="grid grid-cols-3 gap-4">
             {
                 cards.map( (tek) => <Card tek = {tek}></Card> )
             }
