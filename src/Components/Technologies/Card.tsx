@@ -10,7 +10,9 @@ interface prop{
 const Card = ({ tek, isSelected, setIsSelected }: prop) => {
 
     const handleClicl = () =>{
-         setIsSelected([...isSelected, tek]);  
+         if(!isSelected.includes(tek)){
+            setIsSelected([...isSelected, tek]);
+         }  
     }
 
     return (
