@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { ICard } from "../Types/Types";
 import Card from "./Card";
 import SelectedTechnology from "./SelectedTechnology";
@@ -5,16 +6,22 @@ import SelectedTechnology from "./SelectedTechnology";
 
 const TechnologyCards = ({cards} : { cards : ICard[] }) => {
 
-    console.log(cards);
+    const [isSelected, setIsSelected] = useState<ICard[]>([]);
+
+    console.log(isSelected);
 
     return (
-        <div className="flex my-5">
+        <div className="flex my-5 gap-10">
            <div className="grid grid-cols-3 gap-4">
             {
-                cards.map( (tek) => <Card tek = {tek}></Card> )
+                cards.map( (tek , ind) => <Card isSelected = {isSelected} setIsSelected = {setIsSelected} tek = {tek} key = {ind}></Card> )
             }
             </div>
-            <SelectedTechnology></SelectedTechnology>
+           <div className="w-87.5 ml-6">
+             {
+                isSelected.map( (selected, ind) => <SelectedTechnology selected = {selected} key={ind} ></SelectedTechnology> )
+            }
+           </div>
         </div>
     );
 };

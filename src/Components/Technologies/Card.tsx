@@ -1,6 +1,18 @@
+import type { Dispatch, SetStateAction } from "react";
 import type { ICard } from "../Types/Types";
 
-const Card = ({ tek }: { tek: ICard }) => {
+interface prop{
+    tek : ICard,
+    isSelected : ICard[],
+    setIsSelected : Dispatch<SetStateAction<ICard[]>>
+}
+
+const Card = ({ tek, isSelected, setIsSelected }: prop) => {
+
+    const handleClicl = () =>{
+         setIsSelected([...isSelected, tek]);  
+    }
+
     return (
         <div className="w-75 h-71.25 rounded-xl p-4 shadow-sm">
 
@@ -42,7 +54,9 @@ const Card = ({ tek }: { tek: ICard }) => {
                 </p>
             </div>
 
-            <div className="mt-7">
+            <div 
+            onClick={ handleClicl}
+            className="mt-7">
                 <button className="bg-[#020817] w-full h-9 rounded-lg text-white text-xs btn">
                     Add to Stack
                 </button>
