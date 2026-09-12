@@ -19,7 +19,7 @@ function App() {
     <>
       <Nav></Nav>
       <Hero></Hero>
-      <Suspense>
+      <Suspense fallback = { <h2>Loading......</h2>}>
       <Technologies CardsPromise = {CardsPromise}></Technologies>
       </Suspense>
       <Footer></Footer>
