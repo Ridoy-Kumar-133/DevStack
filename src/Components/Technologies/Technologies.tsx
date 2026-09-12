@@ -1,5 +1,6 @@
+import { use } from "react";
 import type { ICard } from "../Types/Types";
-import TechnologyCard from "./TechnologyCard";
+import TechnologyCards from "./TechnologyCards";
 
 
 interface CardsProps{
@@ -8,8 +9,7 @@ interface CardsProps{
 
 const Technologies = ({CardsPromise} : CardsProps) => {
 
-console.log(CardsPromise);
-
+const cards = use(CardsPromise);
     return (
         <div className="h-336.25 w-[90%] m-auto">
 
@@ -19,7 +19,7 @@ console.log(CardsPromise);
             </div>
 
             {/* Technology Card section */}
-            <TechnologyCard></TechnologyCard>
+            <TechnologyCards cards = {cards} ></TechnologyCards>
         </div>
     );
 };
