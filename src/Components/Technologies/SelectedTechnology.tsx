@@ -36,7 +36,7 @@ const SelectedTechnology = ({ selected ,isSelected, setIsSelected  }: pop) => {
 
         <button 
         onClick={xbuttonClicked}
-        className="text-xl text-slate-400"> × </button>
+        className="text-3xl text-slate-400 cursor-pointer "> × </button>
 
       </div>
     </div>
