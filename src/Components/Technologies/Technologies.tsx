@@ -1,7 +1,15 @@
+import type { ICard } from "../Types/Types";
 import TechnologyCard from "./TechnologyCard";
 
 
-const Technologies = () => {
+interface CardsProps{
+    CardsPromise : Promise<ICard[]>
+}
+
+const Technologies = ({CardsPromise} : CardsProps) => {
+
+console.log(CardsPromise);
+
     return (
         <div className="h-336.25 w-[90%] m-auto">
 
