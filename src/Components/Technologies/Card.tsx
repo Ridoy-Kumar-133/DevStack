@@ -1,5 +1,7 @@
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { ICard } from "../Types/Types";
+import { toast } from "react-toastify";
+
 
 interface prop{
     tek : ICard,
@@ -9,10 +11,19 @@ interface prop{
 
 const Card = ({ tek, isSelected, setIsSelected }: prop) => {
 
+    const [added, setAdded] = useState("Add to Stack");
+
     const handleClicl = () =>{
          if(!isSelected.includes(tek)){
+
+            toast.success(`${tek.name} is added to the Stack Successfully`)
+
             setIsSelected([...isSelected, tek]);
-         }  
+            setAdded("✓ Added to Stack")
+         }  else{
+            
+            toast.error(`${tek.name} is already in Stack`)
+         }
     }
 
     return (
@@ -25,9 +36,24 @@ const Card = ({ tek, isSelected, setIsSelected }: prop) => {
                     className="h-8.5 w-9"
                 />
 
-                <button className="text-xs px-2 py-1 rounded-3xl bg-green-50 text-green-600">
-                    {tek.badge}
-                </button>
+               <button
+  className={`text-xs px-2 py-1 rounded-3xl ${
+    tek.badge === "Popular" ? " text-green-600 bg-green-50 "
+      : tek.badge === "Versatile" ? "bg-green-50 text-green-600"
+      : tek.badge === "Fast" ? "bg-orange-50 text-orange-600"
+      : tek.badge === "Standard" ? " text-green-600 bg-green-50"
+      : tek.badge === "Top SQL" ? "bg-blue-50 text-blue-600"
+      : tek.badge === "Cache" ? "bg-red-50 text-red-600"
+      : tek.badge === "Ubiquitous" ? "bg-yellow-50 text-yellow-600"
+      : tek.badge === "Essential" ? "bg-blue-50 text-blue-600"
+      : tek.badge === "Robust" ? "bg-blue-50 text-blue-600"
+      : tek.badge === "Modern" ? "bg-cyan-50 text-cyan-600"
+      : tek.badge === "Containers" ? "bg-blue-50 text-blue-600"
+      : "bg-gray-50 text-gray-600"
+  }`}
+>
+  {tek.badge}
+</button>
             </div>
 
             <div className="mt-3">
@@ -51,7 +77,7 @@ const Card = ({ tek, isSelected, setIsSelected }: prop) => {
                     {tek.level}
                 </p>
 
-                <p className="text-xs">
+                <p className="text-xs ml-12">
                     ⭐ {tek.rating}
                 </p>
             </div>
@@ -59,8 +85,8 @@ const Card = ({ tek, isSelected, setIsSelected }: prop) => {
             <div 
             onClick={ handleClicl}
             className="mt-7">
-                <button className="bg-[#020817] w-full h-9 rounded-lg text-white text-xs btn">
-                    Add to Stack
+                <button className={`${ isSelected.includes(tek) ? `disabled: shadow-md  w-full h-9 rounded-lg  ` : `bg-[#020817] w-full h-9 rounded-lg text-white text-xs btn` }`}>
+                    {added}
                 </button>
             </div>
 

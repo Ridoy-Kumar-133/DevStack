@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { ICard } from "../Types/Types";
 import Card from "./Card";
 import SelectedTechnology from "./SelectedTechnology";
+import { toast } from "react-toastify";
 
 
 const TechnologyCards = ({cards} : { cards : ICard[] }) => {
@@ -10,7 +11,10 @@ const TechnologyCards = ({cards} : { cards : ICard[] }) => {
 
     const handleClickRemoveAll = () =>{
          setIsSelected([]);
+         toast.success("All technology remove succesfully!")
     }
+
+    
 
     
 

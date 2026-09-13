@@ -1,5 +1,6 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ICard } from "../Types/Types";
+import { toast } from "react-toastify";
 
 interface pop{
    selected: ICard,
@@ -15,6 +16,7 @@ const SelectedTechnology = ({ selected ,isSelected, setIsSelected  }: pop) => {
         setIsSelected(
           isSelected.filter( item => item.id !== selected.id )
         )
+        toast.success(`${selected.name} is removed successfully`);
   }
 
   return (

@@ -14,9 +14,9 @@ const Footer = () => {
                  </div>
                   <div className=''>
                     <ul className='flex gap-5 font-semibold text-[#475569]'>
-                        <li>GitHub</li>
-                        <li>Twiter</li>
-                        <li>Linkdin</li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twiter</a></li>
+                        <li><a href="#">Linkdin</a></li>
                     </ul>
                   </div>
                </div>
@@ -24,7 +24,7 @@ const Footer = () => {
                <div className='flex gap-50'>
 
                  <div>
-                    <p className='font-[#0F172A] font-semibold mb-3 '>PRODUCT</p>
+                    <p className='font-[#0F172A] font-semibold mb-3 '><a href="#">PRODUCT</a></p>
                     <ul>
                         <li className='m-2 text-[#64748B]'>Home</li>
                         <li className='m-2 text-[#64748B]'>Technologies</li>
@@ -32,7 +32,7 @@ const Footer = () => {
                     </ul>
                  </div>
                  <div>
-                    <p className='font-[#0F172A] font-semibold mb-3 '>COMPANY</p>
+                    <p className='font-[#0F172A] font-semibold mb-3 '><a href="#">COMPANY</a></p>
                     <ul>
                         <li className='m-2 text-[#64748B]'>About</li>
                         <li className='m-2 text-[#64748B]'>Contact</li>
@@ -40,7 +40,7 @@ const Footer = () => {
                     </ul>
                  </div>
                  <div>
-                    <p className='font-[#0F172A] font-semibold mb-3 '>LEGAL</p>
+                    <p className='font-[#0F172A] font-semibold mb-3 '><a href="#">LEGAL</a></p>
                     <ul>
                         <li className='m-2 text-[#64748B]'>Privacy Policy</li>
                         <li className='m-2 text-[#64748B]'>Terms of Service</li>
@@ -60,8 +60,8 @@ const Footer = () => {
                         <p className='text-[#94A3B8]'>© 2026 Dev Stack. All rights reserved.</p>
                     </div>
                     <div className='my-5' >
-                        <button className='text-[#94A3B8] m-2'>Privacy</button>
-                        <button className='text-[#94A3B8]'>Terms</button>
+                        <button className='text-[#94A3B8] m-2'><a href="#">Privacy</a></button>
+                        <button className='text-[#94A3B8]'><a href="#">Terms</a></button>
                     </div>
                 </div>
             </div>
