@@ -1,7 +1,7 @@
 Name : DevStack,
  DevStack is a simple and interactive technology stack management website
 
- live link : 
+ live link : https://relaxed-snickerdoodle-12f27f.netlify.app/
 
  Description : DevStack is a simple and interactive technology stack management website. Users can explore different technologies and add their favorite technologies to their stack. 
 
